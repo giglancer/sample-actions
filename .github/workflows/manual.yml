@@ -1,0 +1,14 @@
+name: Manual
+on: 
+  workflow_dispatch:
+   inputs:
+    greeting:
+      description: 'A cheerful greeting'
+      required: true
+      default: 'Hello, World'
+      type: string
+jobs:
+ run:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "${{ inputs.greeting }}"
